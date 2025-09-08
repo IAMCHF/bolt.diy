@@ -6,7 +6,7 @@ FROM ${BASE} AS base
 WORKDIR /app
 
 # Install dependencies (this step is cached as long as the dependencies don't change)
-# COPY package.json pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml ./
 
 # 设置 PATH 环境变量以确保 nvm 安装的工具可用
 # ENV PATH /root/.nvm/versions/node/v20.18.0/bin:$PATH
@@ -14,7 +14,7 @@ WORKDIR /app
 RUN npm install -g corepack@latest
 
 #RUN corepack enable pnpm && pnpm install
-# RUN npm install -g pnpm && pnpm install
+RUN npm install -g pnpm && pnpm install
 
 # Copy the rest of your app's source code
 COPY . .
