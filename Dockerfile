@@ -1,5 +1,5 @@
 # ARG BASE=node:20.18.0
-ARG BASE=iamchf142/ubuntu20.04-node：v1
+ARG BASE=iamchf142/ubuntu20.04-node:v1
 
 FROM ${BASE} AS base
 
