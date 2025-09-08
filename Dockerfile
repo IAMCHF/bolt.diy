@@ -2,7 +2,7 @@
 ARG BASE=iamchf142/bolt-diy:v1
 FROM ${BASE} AS base
 
-# WORKDIR /app
+WORKDIR /app
 
 # Install dependencies (this step is cached as long as the dependencies don't change)
 # COPY package.json pnpm-lock.yaml ./
@@ -13,7 +13,7 @@ FROM ${BASE} AS base
 # RUN npm install -g pnpm && pnpm install
 
 # Copy the rest of your app's source code
-# COPY . .
+COPY . .
 
 # Expose the port the app runs on
 EXPOSE 5173
