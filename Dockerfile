@@ -8,10 +8,7 @@ WORKDIR /app
 # Install dependencies (this step is cached as long as the dependencies don't change)
 COPY package.json pnpm-lock.yaml ./
 
-# 设置 PATH 环境变量以确保 nvm 安装的工具可用
-# ENV PATH /root/.nvm/versions/node/v20.18.0/bin:$PATH
-
-RUN npm install -g corepack@latest
+#RUN npm install -g corepack@latest
 
 #RUN corepack enable pnpm && pnpm install
 RUN npm install -g pnpm && pnpm install
