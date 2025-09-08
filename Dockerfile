@@ -1,5 +1,6 @@
 # ARG BASE=node:20.18.0
-ARG BASE=iamchf142/bolt-diy:v1
+# ARG BASE=iamchf142/bolt-diy:v1
+ARG BASE=iamchf142/ubuntu20.04-node:v1
 FROM ${BASE} AS base
 
 WORKDIR /app
@@ -8,7 +9,7 @@ WORKDIR /app
 # COPY package.json pnpm-lock.yaml ./
 
 # 设置 PATH 环境变量以确保 nvm 安装的工具可用
-ENV PATH /root/.nvm/versions/node/v20.18.0/bin:$PATH
+# ENV PATH /root/.nvm/versions/node/v20.18.0/bin:$PATH
 
 RUN npm install -g corepack@latest
 
