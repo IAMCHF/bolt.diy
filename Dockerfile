@@ -14,7 +14,7 @@ COPY package.json pnpm-lock.yaml ./
 RUN npm install -g pnpm && pnpm install
 
 # Copy the rest of your app's source code
-# COPY . .
+COPY . .
 
 # Expose the port the app runs on
 EXPOSE 5173
